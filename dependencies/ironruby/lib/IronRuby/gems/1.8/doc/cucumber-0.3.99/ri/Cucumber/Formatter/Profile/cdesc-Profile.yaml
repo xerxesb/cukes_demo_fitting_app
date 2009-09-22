@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The formatter used for <tt>--format profile</tt>
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NUMBER_OF_STEP_DEFINITONS_TO_SHOW
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NUMBER_OF_STEP_INVOCATIONS_TO_SHOW
+  value: "5"
+full_name: Cucumber::Formatter::Profile
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: print_summary
+- !ruby/object:RI::MethodSummary 
+  name: visit_step
+- !ruby/object:RI::MethodSummary 
+  name: visit_step_result
+name: Profile
+superclass: Progress

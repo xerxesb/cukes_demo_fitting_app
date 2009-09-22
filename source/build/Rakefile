@@ -1,0 +1,69 @@
+require 'win32/registry'
+
+ENV['configuration'] = "Debug" if ENV['configuration'].nil?
+configuration = ENV['configuration']
+
+@source_path = "..\\..\\source"
+@dependencies_path = "..\\..\\dependencies"
+@output_path = "..\\..\\output\\#{configuration}"
+
+task :default => [:build]
+
+desc "Build the solution"
+task :build => [:compile, :fxcop, :cover, :spec, :cucumber]
+
+desc "Compile solution to output directory"
+task :compile do
+  sh msbuild_command('Automated' + configuration)
+end
+
+desc "Run fxcop"
+task :fxcop do
+	sh "#{@dependencies_path}\\fxcop\\fxcopcmd.exe /p:SimpleFit.fxcop /f:#{@output_path}\\Cochlear.SimpleFit\\Cochlear.SimpleFit.dll /o:#{@output_path}\\fxcop_results.xml /fo /c"
+end
+
+desc "Run unit tests"
+task :test do
+  sh test_command(configuration)
+end
+
+desc "Run specifications (Opt: 'specfile=<pattern>' to run specs)"
+task :spec do
+  spec_file = ENV['specfile']
+  sh "#{@dependencies_path}\\ironruby\\bin\\ir.exe -I#{@output_path} #{@dependencies_path}\\ironruby\\bin\\ispec #{@source_path}\\behaviour\\specs\\helpers\\specs\\#{spec_file} --format specdoc"
+end
+
+desc "Run code coverage while executing tests"
+task :cover => [:ncover, :ncover_explorer]
+
+desc "Run ncover while executing tests"
+task :ncover do
+  sh "#{@dependencies_path}\\ncover\\ncover.console-x86.exe " + test_command(configuration)  + " //reg //q //x #{@output_path}\\ncover_results.xml //a Cochlear.SimpleFit"
+end
+
+desc "Run ncover explorer"
+task :ncover_explorer do
+  sh "#{@dependencies_path}\\ncoverexplorer\\ncoverexplorer.console.exe #{@output_path}\\ncover_results.xml /c:NCoverExplorer.config /f /q"
+end
+
+def test_command(configuration)
+  "#{@dependencies_path}\\nunit\\bin\\net-2.0\\nunit-console-x86.exe ..\\behaviour\\tests\\SimpleFit.nunit /config=Automated#{configuration} /nologo /xml=#{@output_path}\\test_results.xml"
+end
+
+desc "Run Cucumber features"
+task :cucumber do
+  spec_file = ENV['specfile']
+  sh "#{@dependencies_path}\\ironruby\\bin\\ir.exe -I#{@output_path} #{@dependencies_path}\\ironruby\\bin\\icucumber #{@source_path}\\behaviour\\features\\#{spec_file} --no-color --strict -s"
+end
+
+def msbuild_command(target)
+  get_msbuild + ' ..\Cochlear.SimpleFit.sln /p:Configuration=' + target
+end
+
+def get_msbuild
+  msbuild_tool_versions = Win32::Registry::HKEY_LOCAL_MACHINE.open('SOFTWARE\Microsoft\MSBuild\ToolsVersions')
+  versions = msbuild_tool_versions.keys()
+  latest_version = versions.max
+  latest_msbuild = msbuild_tool_versions.open(latest_version)
+  return latest_msbuild['MSBuildToolsPath'] + 'MSBuild.exe'
+end

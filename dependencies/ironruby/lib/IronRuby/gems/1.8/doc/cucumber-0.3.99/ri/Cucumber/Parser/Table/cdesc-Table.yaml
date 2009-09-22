@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "TIP: When you hack on the grammar, just delete feature.rb in this directory. Also make sure you have uninstalled all cucumber gems (don't forget xxx-cucumber github gems)."
+- !ruby/struct:SM::Flow::P 
+  body: Treetop will then generate the parser in-memory. When you're happy, just generate the rb file with tt feature.tt
+constants: []
+
+full_name: Cucumber::Parser::Table
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Treetop::Runtime
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _nt_cell
+- !ruby/object:RI::MethodSummary 
+  name: _nt_eof
+- !ruby/object:RI::MethodSummary 
+  name: _nt_eol
+- !ruby/object:RI::MethodSummary 
+  name: _nt_space
+- !ruby/object:RI::MethodSummary 
+  name: _nt_table
+- !ruby/object:RI::MethodSummary 
+  name: _nt_table_row
+- !ruby/object:RI::MethodSummary 
+  name: root
+name: Table
+superclass: 

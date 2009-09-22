@@ -1,0 +1,29 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: to_a
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an Array of Array of String where each String is a &quot;cell&quot; in the table-like structure represented by this Element.
+- !ruby/struct:SM::Flow::P 
+  body: "Supported elements are table, dl, ol and ul. Different conversion strategies are used depending on the kind of element:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "table : Each tr becomes a row. The innerHTML of each td or th inside becomes a cell. The number"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "           of columns is determined by the number of cells in the first row.\n"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "dl : Each dt becomes a row with 2 cells. The innerHTML of the dt itself and the next dd become cells."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "ul or ol : Each li becomes a row with one cell, the innerHTML of the li."
+  type: :BULLET
+full_name: Webrat::Element#to_table
+is_singleton: false
+name: to_table
+params: ()
+visibility: public

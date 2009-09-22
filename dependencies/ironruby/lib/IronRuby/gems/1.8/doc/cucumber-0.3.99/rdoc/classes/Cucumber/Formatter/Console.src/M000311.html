@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>print_stats (Cucumber::Formatter::Console)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/formatter/console.rb, line 63</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">print_stats</span>(<span class="ruby-identifier">features</span>)
+
+        <span class="ruby-ivar">@failures</span> = <span class="ruby-identifier">step_mother</span>.<span class="ruby-identifier">scenarios</span>(<span class="ruby-identifier">:failed</span>).<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Cucumber</span><span class="ruby-operator">::</span><span class="ruby-constant">Ast</span><span class="ruby-operator">::</span><span class="ruby-constant">Scenario</span>) }
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@failures</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">format_string</span>(<span class="ruby-value str">&quot;Failing Scenarios:&quot;</span>, <span class="ruby-identifier">:failed</span>)
+          <span class="ruby-ivar">@failures</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">failure</span><span class="ruby-operator">|</span>
+            <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">format_string</span>(<span class="ruby-value str">&quot;cucumber &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">failure</span>.<span class="ruby-identifier">file_colon_line</span>, <span class="ruby-identifier">:failed</span>) <span class="ruby-operator">+</span>
+            <span class="ruby-identifier">format_string</span>(<span class="ruby-value str">&quot; # Scenario: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">failure</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">:comment</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">dump_count</span>(<span class="ruby-identifier">step_mother</span>.<span class="ruby-identifier">scenarios</span>.<span class="ruby-identifier">length</span>, <span class="ruby-value str">&quot;scenario&quot;</span>)
+        <span class="ruby-identifier">print_status_counts</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">status</span><span class="ruby-operator">|</span> <span class="ruby-identifier">step_mother</span>.<span class="ruby-identifier">scenarios</span>(<span class="ruby-identifier">status</span>)}
+
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">dump_count</span>(<span class="ruby-identifier">step_mother</span>.<span class="ruby-identifier">steps</span>.<span class="ruby-identifier">length</span>, <span class="ruby-value str">&quot;step&quot;</span>)
+        <span class="ruby-identifier">print_status_counts</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">status</span><span class="ruby-operator">|</span> <span class="ruby-identifier">step_mother</span>.<span class="ruby-identifier">steps</span>(<span class="ruby-identifier">status</span>)}
+
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">format_duration</span>(<span class="ruby-identifier">features</span>.<span class="ruby-identifier">duration</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">features</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">features</span>.<span class="ruby-identifier">duration</span>
+
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">flush</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

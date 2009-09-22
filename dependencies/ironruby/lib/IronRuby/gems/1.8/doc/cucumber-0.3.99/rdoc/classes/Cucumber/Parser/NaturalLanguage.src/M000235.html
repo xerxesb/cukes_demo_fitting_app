@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Cucumber::Parser::NaturalLanguage)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/parser/natural_language.rb, line 16</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">step_mother</span>, <span class="ruby-identifier">lang</span>)
+        <span class="ruby-ivar">@keywords</span> = <span class="ruby-constant">Cucumber</span><span class="ruby-operator">::</span><span class="ruby-constant">LANGUAGES</span>[<span class="ruby-identifier">lang</span>]
+        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Language not supported: #{lang.inspect}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@keywords</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-ivar">@keywords</span>[<span class="ruby-value str">'grammar_name'</span>] = <span class="ruby-ivar">@keywords</span>[<span class="ruby-value str">'name'</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\s/</span>, <span class="ruby-value str">''</span>)
+        <span class="ruby-identifier">register_adverbs</span>(<span class="ruby-identifier">step_mother</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">step_mother</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

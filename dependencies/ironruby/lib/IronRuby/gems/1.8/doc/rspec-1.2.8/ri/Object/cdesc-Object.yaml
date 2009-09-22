@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: based on Bounded Spec InstanceExec (Mauricio Fernandez) http://eigenclass.org/hiki/bounded+space+instance_exec
+constants: []
+
+full_name: Object
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: InstanceExecHelper
+- !ruby/object:RI::IncludedModule 
+  name: Spec::Mocks::Methods
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: instance_exec
+name: Object
+superclass: Object

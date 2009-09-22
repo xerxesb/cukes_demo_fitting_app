@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Cucumber::Parser::Feature::Tags1
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ts
+- !ruby/object:RI::MethodSummary 
+  name: white
+name: Tags1
+superclass: 

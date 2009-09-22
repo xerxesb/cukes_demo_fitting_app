@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>visit_features (Cucumber::Formatter::Html)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/formatter/html.rb, line 21</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visit_features</span>(<span class="ruby-identifier">features</span>)
+        <span class="ruby-comment cmt"># &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</span>
+        <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">declare!</span>(
+          <span class="ruby-identifier">:DOCTYPE</span>,
+          <span class="ruby-identifier">:html</span>, 
+          <span class="ruby-identifier">:PUBLIC</span>, 
+          <span class="ruby-value str">'-//W3C//DTD XHTML 1.0 Strict//EN'</span>, 
+          <span class="ruby-value str">'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'</span>
+        )
+        <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">html</span>(<span class="ruby-identifier">:xmlns</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'http://www.w3.org/1999/xhtml'</span>) <span class="ruby-keyword kw">do</span>
+          <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">head</span> <span class="ruby-keyword kw">do</span>
+            <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">meta</span>(<span class="ruby-identifier">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'text/html;charset=utf-8'</span>)
+            <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">title</span> <span class="ruby-value str">'Cucumber'</span>
+            <span class="ruby-identifier">inline_css</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">body</span> <span class="ruby-keyword kw">do</span>
+            <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'cucumber'</span>) <span class="ruby-keyword kw">do</span>
+              <span class="ruby-keyword kw">super</span>
+              <span class="ruby-ivar">@builder</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">format_duration</span>(<span class="ruby-identifier">features</span>.<span class="ruby-identifier">duration</span>), <span class="ruby-identifier">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'duration'</span>)
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Cucumber::Parser::Feature::FeatureSub1
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: bg
+- !ruby/object:RI::MethodSummary 
+  name: comment
+- !ruby/object:RI::MethodSummary 
+  name: feature_elements
+- !ruby/object:RI::MethodSummary 
+  name: header
+- !ruby/object:RI::MethodSummary 
+  name: tags
+- !ruby/object:RI::MethodSummary 
+  name: white1
+- !ruby/object:RI::MethodSummary 
+  name: white2
+- !ruby/object:RI::MethodSummary 
+  name: white3
+name: FeatureSub1
+superclass: 

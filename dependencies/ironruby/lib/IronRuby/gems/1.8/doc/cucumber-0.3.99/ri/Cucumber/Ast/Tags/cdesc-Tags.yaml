@@ -1,0 +1,21 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Holds the names of tags parsed from a feature file:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  @invoice @release_2\n"
+- !ruby/struct:SM::Flow::P 
+  body: This gets stored internally as <tt>[&quot;invoice&quot;, &quot;release_2&quot;]</tt>
+constants: []
+
+full_name: Cucumber::Ast::Tags
+includes: []
+
+instance_methods: []
+
+name: Tags
+superclass: Object

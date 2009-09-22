@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Cucumber::Parser::Feature::PyString1
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: close_py_string
+- !ruby/object:RI::MethodSummary 
+  name: open_py_string
+- !ruby/object:RI::MethodSummary 
+  name: s
+name: PyString1
+superclass: 

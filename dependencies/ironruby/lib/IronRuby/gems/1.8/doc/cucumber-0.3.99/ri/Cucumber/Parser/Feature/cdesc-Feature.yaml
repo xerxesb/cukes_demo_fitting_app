@@ -1,0 +1,63 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "TIP: When you hack on the grammar, just delete feature.rb in this directory. Also make sure you have uninstalled all cucumber gems (don't forget xxx-cucumber github gems)."
+- !ruby/struct:SM::Flow::P 
+  body: Treetop will then generate the parser in-memory. When you're happy, just generate the rb file with tt feature.tt
+constants: []
+
+full_name: Cucumber::Parser::Feature
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Treetop::Runtime
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _nt_background
+- !ruby/object:RI::MethodSummary 
+  name: _nt_close_py_string
+- !ruby/object:RI::MethodSummary 
+  name: _nt_comment
+- !ruby/object:RI::MethodSummary 
+  name: _nt_comment_line
+- !ruby/object:RI::MethodSummary 
+  name: _nt_examples
+- !ruby/object:RI::MethodSummary 
+  name: _nt_examples_sections
+- !ruby/object:RI::MethodSummary 
+  name: _nt_feature_elements
+- !ruby/object:RI::MethodSummary 
+  name: _nt_feature_sub
+- !ruby/object:RI::MethodSummary 
+  name: _nt_line_to_eol
+- !ruby/object:RI::MethodSummary 
+  name: _nt_lines_to_keyword
+- !ruby/object:RI::MethodSummary 
+  name: _nt_multiline_arg
+- !ruby/object:RI::MethodSummary 
+  name: _nt_open_py_string
+- !ruby/object:RI::MethodSummary 
+  name: _nt_py_string
+- !ruby/object:RI::MethodSummary 
+  name: _nt_reserved_words_and_symbols
+- !ruby/object:RI::MethodSummary 
+  name: _nt_scenario
+- !ruby/object:RI::MethodSummary 
+  name: _nt_scenario_outline
+- !ruby/object:RI::MethodSummary 
+  name: _nt_step
+- !ruby/object:RI::MethodSummary 
+  name: _nt_steps
+- !ruby/object:RI::MethodSummary 
+  name: _nt_tag
+- !ruby/object:RI::MethodSummary 
+  name: _nt_tags
+- !ruby/object:RI::MethodSummary 
+  name: _nt_white
+- !ruby/object:RI::MethodSummary 
+  name: root
+name: Feature
+superclass: 

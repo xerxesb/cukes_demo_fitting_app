@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Rake::FeatureTask::new
+is_singleton: true
+name: new
+params: (task_name = "feature", desc = "Run a specified feature with Cucumber.
+visibility: public

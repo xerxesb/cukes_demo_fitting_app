@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Cli::Main#exceeded_tag_limts?
+is_singleton: false
+name: exceeded_tag_limts?
+params: (features)
+visibility: public

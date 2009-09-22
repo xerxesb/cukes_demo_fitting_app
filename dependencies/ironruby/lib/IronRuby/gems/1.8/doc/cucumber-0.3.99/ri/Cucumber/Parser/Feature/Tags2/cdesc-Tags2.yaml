@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Cucumber::Parser::Feature::Tags2
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: at_line?
+- !ruby/object:RI::MethodSummary 
+  name: build
+- !ruby/object:RI::MethodSummary 
+  name: has_all_tags?
+- !ruby/object:RI::MethodSummary 
+  name: has_tags?
+- !ruby/object:RI::MethodSummary 
+  name: tag_names
+name: Tags2
+superclass: 

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::LanguageSupport::StepDefinitionMethods#same_regexp?
+is_singleton: false
+name: same_regexp?
+params: (regexp)
+visibility: public

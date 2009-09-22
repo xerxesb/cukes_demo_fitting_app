@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Rails::failsafe_response
+is_singleton: true
+name: failsafe_response
+params: (output, status, exception = nil)
+visibility: public

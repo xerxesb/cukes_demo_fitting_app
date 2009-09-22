@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Redundant::new
+is_singleton: true
+name: new
+params: (step_def_1, step_def_2)
+visibility: public

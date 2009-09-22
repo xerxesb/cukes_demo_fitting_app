@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Loads a natural language. This has the effect of aliasing Step Definition keywords for all of the registered programming languages (if they support aliasing). See #load_programming_language"
+full_name: Cucumber::StepMother#load_natural_language
+is_singleton: false
+name: load_natural_language
+params: (lang)
+visibility: public

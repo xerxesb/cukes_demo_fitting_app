@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::StepMother#register_step_definitions
+is_singleton: false
+name: register_step_definitions
+params: (step_definitions)
+visibility: public

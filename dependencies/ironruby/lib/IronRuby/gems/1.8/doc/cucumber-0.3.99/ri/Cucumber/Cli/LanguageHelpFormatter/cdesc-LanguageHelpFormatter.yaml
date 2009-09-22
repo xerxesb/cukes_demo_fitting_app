@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: list_keywords
+- !ruby/object:RI::MethodSummary 
+  name: list_languages
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INCOMPLETE
+  value: "%{ The Cucumber grammar has evolved since this translation was written. Please help us complete the translation by translating the missing words in  #{Cucumber::LANGUAGE_FILE}  Then contribute back to the Cucumber project. Details here: http://wiki.github.com/aslakhellesoy/cucumber/spoken-languages }"
+full_name: Cucumber::Cli::LanguageHelpFormatter
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: visit_multiline_arg
+- !ruby/object:RI::MethodSummary 
+  name: visit_table_cell_value
+- !ruby/object:RI::MethodSummary 
+  name: visit_table_row
+name: LanguageHelpFormatter
+superclass: Formatter::Pretty

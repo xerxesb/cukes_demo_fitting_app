@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>parser (Cucumber::Parser::NaturalLanguage)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/parser/natural_language.rb, line 28</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parser</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@parser</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@parser</span>
+        <span class="ruby-identifier">i18n_tt</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">'/i18n.tt'</span>)
+        <span class="ruby-identifier">template</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">i18n_tt</span>, <span class="ruby-constant">Cucumber</span>.<span class="ruby-identifier">file_mode</span>(<span class="ruby-value str">'r'</span>)).<span class="ruby-identifier">read</span>
+        <span class="ruby-identifier">erb</span> = <span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">template</span>)
+        <span class="ruby-identifier">grammar</span> = <span class="ruby-identifier">erb</span>.<span class="ruby-identifier">result</span>(<span class="ruby-identifier">binding</span>)
+        <span class="ruby-constant">Treetop</span>.<span class="ruby-identifier">load_from_string</span>(<span class="ruby-identifier">grammar</span>)
+        <span class="ruby-ivar">@parser</span> = <span class="ruby-constant">Parser</span><span class="ruby-operator">::</span><span class="ruby-constant">I18n</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-node">&quot;#{@keywords['grammar_name']}Parser&quot;</span>).<span class="ruby-identifier">new</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">inspect</span>
+          <span class="ruby-node">&quot;#&lt;#{self.class.name}&gt;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-ivar">@parser</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

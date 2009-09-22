@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature#_nt_scenario
+is_singleton: false
+name: _nt_scenario
+params: ()
+visibility: public

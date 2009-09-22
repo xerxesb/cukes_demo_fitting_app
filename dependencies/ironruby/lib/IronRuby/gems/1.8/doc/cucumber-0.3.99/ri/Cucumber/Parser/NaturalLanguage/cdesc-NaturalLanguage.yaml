@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: get
+- !ruby/object:RI::MethodSummary 
+  name: languages
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: KEYWORD_KEYS
+  value: "%w{name native encoding feature background scenario scenario_outline examples given when then but}"
+full_name: Cucumber::Parser::NaturalLanguage
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: and_keywords
+- !ruby/object:RI::MethodSummary 
+  name: but_keywords
+- !ruby/object:RI::MethodSummary 
+  name: incomplete?
+- !ruby/object:RI::MethodSummary 
+  name: keywords
+- !ruby/object:RI::MethodSummary 
+  name: parse
+- !ruby/object:RI::MethodSummary 
+  name: parser
+- !ruby/object:RI::MethodSummary 
+  name: register_adverbs
+- !ruby/object:RI::MethodSummary 
+  name: scenario_keyword
+name: NaturalLanguage
+superclass: Object

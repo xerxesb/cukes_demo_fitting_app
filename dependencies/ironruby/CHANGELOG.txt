@@ -1,0 +1,20 @@
+CHANGELOG
+=========
+
+ironruby-0.3.0.0 - 2009-03-20
+-----------------------------
+
+- Improves Ruby tokenizer and parser by 30%
+- Moved source code repository to GIT, unsigned builds
+- Thread library (Thread#stop, Kernel#sleep, Thread#raise, Thread#critical=)
+- Fixes interpretation of UnaryExpresion cast with a custom method
+- Implements generic methods parameters binding and explicit overload selection
+- Makes operations on class hierarchy thread-safe
+- Fixes binder error message given when an interface name is displayed.
+- Adds additional RubySpec tests to language/regexp_specs.rb
+- Fixes Zlib::Inflate#inflate and File#join (for gem install)
+- Adds -e support to IronRuby using CommonConsoleOptions.Comand.
+- Regexp literal support for /o
+- Fixnum + Bignum should yield a Bignum, not a Float
+- Implements Ruby protected visibility, fixes other bugs in Module (all specs pass now) and assignment in eval.
+- Implements loading of assembly dependencies.

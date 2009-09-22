@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The formatter used for <tt>--format rerun</tt>
+- !ruby/struct:SM::Flow::P 
+  body: "This formatter keeps track of all failing features and print out their location. Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  features/foo.feature:34 features/bar.feature:11:76:81\n"
+- !ruby/struct:SM::Flow::P 
+  body: This formatter is used by AutoTest - it will use the output to decide what to run the next time, simply passing the output string on the command line.
+constants: []
+
+full_name: Cucumber::Formatter::Rerun
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: visit_feature_element
+- !ruby/object:RI::MethodSummary 
+  name: visit_features
+- !ruby/object:RI::MethodSummary 
+  name: visit_step_name
+name: Rerun
+superclass: Ast::Visitor

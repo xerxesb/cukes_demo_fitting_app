@@ -1,0 +1,24 @@
+IronRuby - http://ironruby.net
+
+I'm pleased to announce a new release of IronRuby: IronRuby 0.3!
+ 
+Staying true to our “Conference-driven development schedule,” this release is in conjunction with MIX ‘09, where Silverlight 3 Beta and ASP.NET MVC 1.0 were announced, to name a few. Demos from John Lam's talk today are here: http://github.com/jschementi/mix09.
+
+RubySpec
+IronRuby passes approximately 80% of RubySpec, the best test suite Ruby has today. IronRuby is best at language compatibility, passing 95% of those tests, but worse on the standard libraries with a pass-rate of 77%. Overall the pass-rate as gone up approximately 10% since the last release, and there hasn’t been a major library push since getting Rails running. For IronRuby 1.0, that number is going to be as high as possible, and we’ll ensure that by continuing to work with the RubySpec project to improve the test suite.
+
+IronRuby.info shows up-to-date RubySpec statistics about IronRuby.
+
+.NET inter-operation
+Since this release is around MIX, and John’s talk is going to be focused around Silverlight and ASP.NET MVC, it seems like a great time to polish IronRuby’s .NET interop. For example, the release enables calling generic methods, implementing interfaces with IronRuby, and better conversions between .NET and Ruby types. We’ve also started to build a .NET interop test suite, using the same infrastructure RubySpec uses (MSpec), to provide a executable specification of how IronRuby and .NET play together. There will also be a written specification showing what these .NET interop features are good for, but not for this release.
+
+For more specifics of what this release contains, checkout out the CHANGELOG.txt in the binary download.
+
+What’s with the version number?
+IronRuby is going to be a bit unconventional-Microsoft (as if that’s something new) and simply release 0.x releases (and maybe 0.x.x if needed) until it gets to 1.0, rather than release something with “Alpha”, “Beta”, or “RTW” attached to the name. That being said, 0.3 is a complete underestimation of where IronRuby is; it’s definitely more than 30% completed. We’ll move through the point releases rather fast, compared to the 7 months it took to get 0.1 (Alpha 1) releases, and another 3-4 months for (Alpha 2). Any maybe even skip some numbers along the way.
+
+What’s next?
+While the .NET interop testing/specing work will continue, the next releases will be much more focused on getting real Ruby applications running well; whether they be already existing apps/frameworks like Rails, RubyGems, Rake, etc, or new applications that people are building with IronRuby. We’re starting to run the gems, rake, and rails tests with IronRuby, and this type of discovery with more Ruby libraries will drive what we work on next. 
+
+In short, expect to see more binary releases, more often. 
+Until then, Download IronRuby 0.3!

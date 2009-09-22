@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature::OpenPyString0#eol
+is_singleton: false
+name: eol
+params: ()
+visibility: public

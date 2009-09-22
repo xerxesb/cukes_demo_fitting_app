@@ -1,0 +1,13 @@
+require 'rubygems'
+version = "> 0"
+if ARGV.first =~ /^_(.*)_$/ and Gem::Version.correct? $1 then
+  version = $1
+  ARGV.shift
+end
+
+#require 'mspec'
+#set :target, "c:/ironruby/bin/ir.exe"
+
+gem 'mspec', version
+load 'mspec'
+

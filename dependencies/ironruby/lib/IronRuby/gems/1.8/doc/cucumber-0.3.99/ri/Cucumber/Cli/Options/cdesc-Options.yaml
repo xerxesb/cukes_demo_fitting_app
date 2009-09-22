@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BUILTIN_FORMATS
+  value: "{         'html'      => ['Cucumber::Formatter::Html',     'Generates a nice looking HTML report.'],         'pretty'    => ['Cucumber::Formatter::Pretty',   'Prints the feature as is - in colours.'],         'profile'   => ['Cucumber::Formatter::Profile',  'Prints the 10 slowest steps at the end.'],         'progress'  => ['Cucumber::Formatter::Progress', 'Prints one character per scenario.'],         'rerun'     => ['Cucumber::Formatter::Rerun',    'Prints failing files with line numbers.'],         'usage'     => ['Cucumber::Formatter::Usage',    'Prints where step definitions are used.'],         'junit'     => ['Cucumber::Formatter::Junit',    'Generates a report similar to Ant+JUnit.'],         'tag_cloud' => ['Cucumber::Formatter::TagCloud', 'Prints a tag cloud of tag usage.'],         'steps'     => ['Cucumber::Formatter::Steps',    'Prints location of step definitions.']"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FORMAT_HELP
+  value: "(BUILTIN_FORMATS.keys.sort.map do |key|         \"  #{key}#{' ' * (max - key.length)} : #{BUILTIN_FORMATS[key][1]}\""
+full_name: Cucumber::Cli::Options
+includes: []
+
+instance_methods: []
+
+name: Options
+superclass: Object

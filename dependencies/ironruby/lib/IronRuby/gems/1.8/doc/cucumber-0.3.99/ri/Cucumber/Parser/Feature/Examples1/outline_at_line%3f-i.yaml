@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature::Examples1#outline_at_line?
+is_singleton: false
+name: outline_at_line?
+params: (line)
+visibility: public

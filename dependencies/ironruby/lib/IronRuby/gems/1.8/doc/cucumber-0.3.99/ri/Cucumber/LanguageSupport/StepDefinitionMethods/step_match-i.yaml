@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::LanguageSupport::StepDefinitionMethods#step_match
+is_singleton: false
+name: step_match
+params: (name_to_match, name_to_report)
+visibility: public

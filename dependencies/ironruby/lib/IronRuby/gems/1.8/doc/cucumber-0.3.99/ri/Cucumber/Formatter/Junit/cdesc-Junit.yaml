@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The formatter used for <tt>--format junit</tt>
+constants: []
+
+full_name: Cucumber::Formatter::Junit
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: visit_background
+- !ruby/object:RI::MethodSummary 
+  name: visit_feature
+- !ruby/object:RI::MethodSummary 
+  name: visit_feature_name
+- !ruby/object:RI::MethodSummary 
+  name: visit_outline_table
+- !ruby/object:RI::MethodSummary 
+  name: visit_scenario_name
+- !ruby/object:RI::MethodSummary 
+  name: visit_steps
+- !ruby/object:RI::MethodSummary 
+  name: visit_table_row
+name: Junit
+superclass: Cucumber::Ast::Visitor

@@ -1,0 +1,15 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Cochlear.SimpleFit.Windows.ApplicationShell"
+    Title="ApplicationShell"
+	  Height="322"
+	  Width="259"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:w="clr-namespace:Cochlear.SimpleFit.Windows"
+    mc:Ignorable="d">
+  
+  <Window.Resources>
+  </Window.Resources>
+</Window>

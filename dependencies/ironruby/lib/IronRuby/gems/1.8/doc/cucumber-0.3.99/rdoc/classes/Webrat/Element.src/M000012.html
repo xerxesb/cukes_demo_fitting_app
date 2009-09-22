@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_table (Webrat::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/webrat/element_locator.rb, line 14</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_table</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">element</span>.<span class="ruby-identifier">name</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'table'</span>
+        <span class="ruby-identifier">table_from_table</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'dl'</span>
+        <span class="ruby-identifier">table_from_dl</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/ul|ol/</span>
+        <span class="ruby-identifier">table_from_list</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;#to_table not supported for #{element.name} elements&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

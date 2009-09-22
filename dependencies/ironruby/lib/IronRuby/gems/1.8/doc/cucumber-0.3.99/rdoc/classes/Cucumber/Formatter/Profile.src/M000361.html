@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>print_summary (Cucumber::Formatter::Profile)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/formatter/profile.rb, line 31</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">print_summary</span>(<span class="ruby-identifier">features</span>)
+        <span class="ruby-keyword kw">super</span>
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\n\nTop #{NUMBER_OF_STEP_DEFINITONS_TO_SHOW} average slowest steps with #{NUMBER_OF_STEP_INVOCATIONS_TO_SHOW} slowest matches:\n&quot;</span>
+
+        <span class="ruby-identifier">mean_durations</span> = <span class="ruby-identifier">map_to_mean_durations</span>(<span class="ruby-ivar">@step_definition_durations</span>)
+        <span class="ruby-identifier">mean_durations</span> = <span class="ruby-identifier">mean_durations</span>.<span class="ruby-identifier">sort_by</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duration_description_location</span>, <span class="ruby-identifier">step_definition</span>, <span class="ruby-identifier">mean_duration</span><span class="ruby-operator">|</span> 
+          <span class="ruby-identifier">mean_duration</span>
+        <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">reverse</span>
+
+        <span class="ruby-identifier">mean_durations</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-constant">NUMBER_OF_STEP_DEFINITONS_TO_SHOW</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duration_description_location</span>, <span class="ruby-identifier">step_definition</span>, <span class="ruby-identifier">mean_duration</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">print_step_definition</span>(<span class="ruby-identifier">step_definition</span>, <span class="ruby-identifier">mean_duration</span>)
+          <span class="ruby-identifier">duration_description_location</span> = <span class="ruby-identifier">duration_description_location</span>.<span class="ruby-identifier">sort_by</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">duration</span>, <span class="ruby-identifier">description</span>, <span class="ruby-identifier">location</span><span class="ruby-operator">|</span> 
+            <span class="ruby-identifier">duration</span> 
+          <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">reverse</span>
+          <span class="ruby-identifier">print_step_definitions</span>(<span class="ruby-identifier">duration_description_location</span>, <span class="ruby-identifier">step_definition</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

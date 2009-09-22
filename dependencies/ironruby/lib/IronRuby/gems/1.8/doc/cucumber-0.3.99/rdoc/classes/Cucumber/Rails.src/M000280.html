@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>use_transactional_fixtures (Cucumber::Rails)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/rails/world.rb, line 40</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">use_transactional_fixtures</span>
+
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">cache_classes</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;WARNING: You have set Rails' config.cache_classes to false (most likely in config/environments/test.rb).  This setting is known to break Cucumber's use_transactional_fixtures method. Set config.cache_classes to true if you want to use transactional fixtures.  For more information see https://rspec.lighthouseapp.com/projects/16211/tickets/165.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-constant">World</span>.<span class="ruby-identifier">use_transactional_fixtures</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>)
+        <span class="ruby-identifier">$_</span><span class="ruby-identifier">_cucumber_toplevel</span>.<span class="ruby-constant">Before</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-ivar">@__cucumber_ar_connection</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@__cucumber_ar_connection</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:increment_open_transactions</span>)
+            <span class="ruby-ivar">@__cucumber_ar_connection</span>.<span class="ruby-identifier">increment_open_transactions</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">:increment_open_transactions</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-ivar">@__cucumber_ar_connection</span>.<span class="ruby-identifier">begin_db_transaction</span>
+          <span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">deliveries</span> = [] <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>)
+        <span class="ruby-keyword kw">end</span>
+        
+        <span class="ruby-identifier">$_</span><span class="ruby-identifier">_cucumber_toplevel</span>.<span class="ruby-constant">After</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-ivar">@__cucumber_ar_connection</span>.<span class="ruby-identifier">rollback_db_transaction</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@__cucumber_ar_connection</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:decrement_open_transactions</span>)
+            <span class="ruby-ivar">@__cucumber_ar_connection</span>.<span class="ruby-identifier">decrement_open_transactions</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">:decrement_open_transactions</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

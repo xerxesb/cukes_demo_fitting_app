@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Cucumber::Parser::Feature::Examples1
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: at_line?
+- !ruby/object:RI::MethodSummary 
+  name: build
+- !ruby/object:RI::MethodSummary 
+  name: has_all_tags?
+- !ruby/object:RI::MethodSummary 
+  name: has_tags?
+- !ruby/object:RI::MethodSummary 
+  name: matches_name?
+- !ruby/object:RI::MethodSummary 
+  name: outline_at_line?
+name: Examples1
+superclass: 

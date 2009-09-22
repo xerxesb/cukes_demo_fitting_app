@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature::PyString1#s
+is_singleton: false
+name: s
+params: ()
+visibility: public

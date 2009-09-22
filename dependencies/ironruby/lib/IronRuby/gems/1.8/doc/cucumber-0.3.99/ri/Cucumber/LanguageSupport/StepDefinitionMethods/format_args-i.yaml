@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Formats the matched arguments of the associated Step. This method is usually called from visitors, which render output.
+- !ruby/struct:SM::Flow::P 
+  body: The <tt>format</tt> can either be a String or a Proc.
+- !ruby/struct:SM::Flow::P 
+  body: "If it is a String it should be a format string according to <tt>Kernel#sprinf</tt>, for example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  '&lt;span class=&quot;param&quot;&gt;%s&lt;/span&gt;&lt;/tt&gt;'\n"
+- !ruby/struct:SM::Flow::P 
+  body: "If it is a Proc, it should take one argument and return the formatted argument, for example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  lambda { |param| &quot;[#{param}]&quot; }\n"
+full_name: Cucumber::LanguageSupport::StepDefinitionMethods#format_args
+is_singleton: false
+name: format_args
+params: (step_name, format)
+visibility: public

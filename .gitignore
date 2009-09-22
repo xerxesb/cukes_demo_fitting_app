@@ -1,0 +1,15 @@
+*.suo
+*.resharper.user
+*.cache
+*.Cache
+*.csproj.user
+
+output/
+source/*/bin/
+source/*/obj/
+source/behaviour/*/*/bin/
+source/behaviour/*/*/obj/
+
+# NUnit results are saved to this directory but should be ignored.
+source/behaviour/tests/SimpleFit.VisualState.xml
+source/behaviour/tests/TestResult.xml

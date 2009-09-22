@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Cucumber::Parser::FeatureParser
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Feature
+instance_methods: []
+
+name: FeatureParser
+superclass: Treetop::Runtime::CompiledParser

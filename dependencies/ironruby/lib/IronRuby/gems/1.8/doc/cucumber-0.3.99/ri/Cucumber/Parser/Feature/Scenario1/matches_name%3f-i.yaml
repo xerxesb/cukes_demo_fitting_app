@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature::Scenario1#matches_name?
+is_singleton: false
+name: matches_name?
+params: (regexp_to_match)
+visibility: public

@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The formatter used for <tt>--format usage</tt>
+constants: []
+
+full_name: Cucumber::Formatter::Usage
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Console
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: print_summary
+- !ruby/object:RI::MethodSummary 
+  name: print_unused_step_definitions
+- !ruby/object:RI::MethodSummary 
+  name: visit_features
+- !ruby/object:RI::MethodSummary 
+  name: visit_step
+- !ruby/object:RI::MethodSummary 
+  name: visit_step_name
+name: Usage
+superclass: Ast::Visitor

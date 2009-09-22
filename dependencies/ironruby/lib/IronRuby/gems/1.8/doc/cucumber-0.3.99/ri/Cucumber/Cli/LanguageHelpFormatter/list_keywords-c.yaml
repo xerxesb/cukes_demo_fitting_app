@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Cli::LanguageHelpFormatter::list_keywords
+is_singleton: true
+name: list_keywords
+params: (io, lang)
+visibility: public

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>print_tag_limit_warnings (Cucumber::Formatter::Console)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/formatter/console.rb, line 121</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">print_tag_limit_warnings</span>(<span class="ruby-identifier">options</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">tag_limit_breached?</span>(<span class="ruby-identifier">options</span>, <span class="ruby-ivar">@tag_occurences</span>)
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span>
+        <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">format_string</span>(<span class="ruby-value str">&quot;Failed due to exceeding the tag limit&quot;</span>, <span class="ruby-identifier">:failed</span>)
+        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:include_tags</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tag_name</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">tag_frequnecy</span> = <span class="ruby-ivar">@tag_occurences</span>[<span class="ruby-identifier">tag_name</span>].<span class="ruby-identifier">size</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">limit</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tag_frequnecy</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">limit</span>
+            <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">format_string</span>(<span class="ruby-node">&quot;@#{tag_name} occurred:#{tag_frequnecy} limit:#{limit}&quot;</span>, <span class="ruby-identifier">:failed</span>)
+            <span class="ruby-ivar">@tag_occurences</span>[<span class="ruby-identifier">tag_name</span>].<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">location</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">format_string</span>(<span class="ruby-node">&quot;  #{location}&quot;</span>, <span class="ruby-identifier">:failed</span>)}
+            <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">flush</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

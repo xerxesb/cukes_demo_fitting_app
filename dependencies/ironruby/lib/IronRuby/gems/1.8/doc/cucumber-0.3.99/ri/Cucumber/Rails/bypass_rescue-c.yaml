@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Rails::bypass_rescue
+is_singleton: true
+name: bypass_rescue
+params: ()
+visibility: public

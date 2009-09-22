@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Cucumber::Parser::Feature::CommentLine0
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: line_to_eol
+name: CommentLine0
+superclass: 

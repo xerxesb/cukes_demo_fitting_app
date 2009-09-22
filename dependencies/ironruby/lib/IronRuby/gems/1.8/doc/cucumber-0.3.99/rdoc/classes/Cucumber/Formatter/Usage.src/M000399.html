@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>print_summary (Cucumber::Formatter::Usage)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/formatter/usage.rb, line 41</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">print_summary</span>(<span class="ruby-identifier">features</span>)
+        <span class="ruby-identifier">sorted_defs</span> = <span class="ruby-ivar">@step_definitions</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">step_definition</span><span class="ruby-operator">|</span> <span class="ruby-identifier">step_definition</span>.<span class="ruby-identifier">backtrace_line</span>}
+        
+        <span class="ruby-identifier">sorted_defs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">step_definition</span><span class="ruby-operator">|</span>          
+          <span class="ruby-identifier">step_matches_and_descriptions</span> = <span class="ruby-ivar">@step_definitions</span>[<span class="ruby-identifier">step_definition</span>].<span class="ruby-identifier">sort_by</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">step_match_and_description</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">step_match</span> = <span class="ruby-identifier">step_match_and_description</span>[<span class="ruby-value">0</span>]
+            <span class="ruby-identifier">step_match</span>.<span class="ruby-identifier">step_definition</span>.<span class="ruby-identifier">regexp</span>.<span class="ruby-identifier">inspect</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">step_matches</span> = <span class="ruby-identifier">step_matches_and_descriptions</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">step_match_and_description</span><span class="ruby-operator">|</span> <span class="ruby-identifier">step_match_and_description</span>[<span class="ruby-value">0</span>]}
+
+          <span class="ruby-identifier">lengths</span> = <span class="ruby-identifier">step_matches_and_descriptions</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">step_match_and_description</span><span class="ruby-operator">|</span> 
+            <span class="ruby-identifier">step_match_and_description</span>[<span class="ruby-value">2</span>]
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">lengths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">step_definition</span>.<span class="ruby-identifier">text_length</span>
+          <span class="ruby-identifier">max_length</span> = <span class="ruby-identifier">lengths</span>.<span class="ruby-identifier">max</span>
+
+          <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">step_definition</span>.<span class="ruby-identifier">regexp</span>.<span class="ruby-identifier">inspect</span>
+          <span class="ruby-ivar">@io</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">format_string</span>(<span class="ruby-node">&quot;   # #{step_definition.file_colon_line}&quot;</span>.<span class="ruby-identifier">indent</span>(<span class="ruby-identifier">max_length</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">step_definition</span>.<span class="ruby-identifier">text_length</span>), <span class="ruby-identifier">:comment</span>)
+          <span class="ruby-identifier">da</span> = <span class="ruby-identifier">step_matches_and_descriptions</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">step_match_and_description</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">step_match</span>      = <span class="ruby-identifier">step_match_and_description</span>[<span class="ruby-value">0</span>]
+            <span class="ruby-identifier">description</span>     = <span class="ruby-identifier">step_match_and_description</span>[<span class="ruby-value">1</span>]
+            <span class="ruby-identifier">length</span>          = <span class="ruby-identifier">step_match_and_description</span>[<span class="ruby-value">2</span>]
+            <span class="ruby-identifier">file_colon_line</span> = <span class="ruby-identifier">step_match_and_description</span>[<span class="ruby-value">3</span>]
+            <span class="ruby-node">&quot; #{description}&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">format_string</span>(<span class="ruby-node">&quot; # #{file_colon_line}&quot;</span>.<span class="ruby-identifier">indent</span>(<span class="ruby-identifier">max_length</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">length</span>), <span class="ruby-identifier">:comment</span>)
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">da</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">puts</span> <span class="ruby-identifier">d</span>}
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">print_unused_step_definitions</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

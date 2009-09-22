@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature::Examples0#table
+is_singleton: false
+name: table
+params: ()
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature::FeatureSub1#white2
+is_singleton: false
+name: white2
+params: ()
+visibility: public

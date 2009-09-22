@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::Feature#_nt_reserved_words_and_symbols
+is_singleton: false
+name: _nt_reserved_words_and_symbols
+params: ()
+visibility: public

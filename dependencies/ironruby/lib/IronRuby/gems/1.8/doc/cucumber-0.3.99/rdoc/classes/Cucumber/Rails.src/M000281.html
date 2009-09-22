@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>bypass_rescue (Cucumber::Rails)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/rails/world.rb, line 70</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">bypass_rescue</span>
+      <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:rescue_action_without_bypass</span>, <span class="ruby-identifier">:rescue_action</span>
+
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rescue_action</span>(<span class="ruby-identifier">exception</span>)
+          <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Failsafe</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">:failsafe_response_without_bypass</span>, <span class="ruby-identifier">:failsafe_response</span>
+        
+          <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">failsafe_response</span>(<span class="ruby-identifier">exception</span>)
+            <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">NameError</span> <span class="ruby-comment cmt"># Failsafe was introduced in Rails 2.3.2</span>
+        <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">failsafe_response</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">status</span>, <span class="ruby-identifier">exception</span> = <span class="ruby-keyword kw">nil</span>)
+            <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

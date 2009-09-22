@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Cucumber::Parser::NaturalLanguage#register_adverbs
+is_singleton: false
+name: register_adverbs
+params: (step_mother)
+visibility: public

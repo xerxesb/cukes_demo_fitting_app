@@ -1,0 +1,19 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="Cochlear.SimpleFit.UnitTests\bin\Debug\Cochlear.SimpleFit.UnitTests.dll" />
+    <assembly path="Cochlear.SimpleFit.Windows.UnitTests\bin\Debug\Cochlear.SimpleFit.Windows.UnitTests.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="Cochlear.SimpleFit.UnitTests\bin\Release\Cochlear.SimpleFit.UnitTests.dll" />
+    <assembly path="Cochlear.SimpleFit.Windows.UnitTests\bin\Release\Cochlear.SimpleFit.Windows.UnitTests.dll" />
+  </Config>
+  <Config name="AutomatedDebug" appbase="..\..\..\output\debug" binpathtype="Auto" configfile="..\..\source\behaviour\tests\SimpleFit.config">
+    <assembly path="Cochlear.SimpleFit.UnitTests\Cochlear.SimpleFit.UnitTests.dll" />
+    <assembly path="Cochlear.SimpleFit.Windows.UnitTests\Cochlear.SimpleFit.Windows.UnitTests.dll" />
+  </Config>
+  <Config name="AutomatedRelease" appbase="..\..\..\output\release" binpathtype="Auto" configfile="..\..\source\behaviour\tests\SimpleFit.config">
+    <assembly path="Cochlear.SimpleFit.UnitTests\Cochlear.SimpleFit.UnitTests.dll" />
+    <assembly path="Cochlear.SimpleFit.Windows.UnitTests\Cochlear.SimpleFit.Windows.UnitTests.dll" />
+  </Config>
+</NUnitProject>

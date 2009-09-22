@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Object#instance_exec
+is_singleton: false
+name: instance_exec
+params: (*args, &block)
+visibility: public

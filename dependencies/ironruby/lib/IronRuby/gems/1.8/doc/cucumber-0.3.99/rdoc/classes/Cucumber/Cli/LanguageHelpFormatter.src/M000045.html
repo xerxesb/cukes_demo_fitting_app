@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>list_languages (Cucumber::Cli::LanguageHelpFormatter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/cucumber/cli/language_help_formatter.rb, line 17</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">list_languages</span>(<span class="ruby-identifier">io</span>)
+        <span class="ruby-identifier">raw</span> = <span class="ruby-constant">Cucumber</span><span class="ruby-operator">::</span><span class="ruby-constant">LANGUAGES</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lang</span><span class="ruby-operator">|</span>
+          [<span class="ruby-identifier">lang</span>, <span class="ruby-constant">Cucumber</span><span class="ruby-operator">::</span><span class="ruby-constant">LANGUAGES</span>[<span class="ruby-identifier">lang</span>][<span class="ruby-value str">'name'</span>], <span class="ruby-constant">Cucumber</span><span class="ruby-operator">::</span><span class="ruby-constant">LANGUAGES</span>[<span class="ruby-identifier">lang</span>][<span class="ruby-value str">'native'</span>]]
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">table</span> = <span class="ruby-constant">Ast</span><span class="ruby-operator">::</span><span class="ruby-constant">Table</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">raw</span>)
+        <span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">io</span>, {<span class="ruby-identifier">:check_lang=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword kw">true</span>}).<span class="ruby-identifier">visit_multiline_arg</span>(<span class="ruby-identifier">table</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

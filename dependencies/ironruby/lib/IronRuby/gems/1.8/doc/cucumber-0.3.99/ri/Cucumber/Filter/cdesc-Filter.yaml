@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Filters the AST based on --tags and --name
+constants: []
+
+full_name: Cucumber::Filter
+includes: []
+
+instance_methods: []
+
+name: Filter
+superclass: Object

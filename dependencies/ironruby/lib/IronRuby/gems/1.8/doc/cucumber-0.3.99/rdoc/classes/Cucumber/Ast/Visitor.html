@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Cucumber::Ast::Visitor</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Cucumber::Ast::Visitor</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/cucumber/ast/visitor_rb.html">
+                lib/cucumber/ast/visitor.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Base class for formatters. This class just walks the tree depth first. Just
+override the methods you care about. Remember to call super if you override
+a method.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000279">announce</a>&nbsp;&nbsp;
+      <a href="#M000256">new</a>&nbsp;&nbsp;
+      <a href="#M000265">visit_background</a>&nbsp;&nbsp;
+      <a href="#M000266">visit_background_name</a>&nbsp;&nbsp;
+      <a href="#M000259">visit_comment</a>&nbsp;&nbsp;
+      <a href="#M000260">visit_comment_line</a>&nbsp;&nbsp;
+      <a href="#M000268">visit_examples</a>&nbsp;&nbsp;
+      <a href="#M000267">visit_examples_array</a>&nbsp;&nbsp;
+      <a href="#M000269">visit_examples_name</a>&nbsp;&nbsp;
+      <a href="#M000258">visit_feature</a>&nbsp;&nbsp;
+      <a href="#M000264">visit_feature_element</a>&nbsp;&nbsp;
+      <a href="#M000263">visit_feature_name</a>&nbsp;&nbsp;
+      <a href="#M000257">visit_features</a>&nbsp;&nbsp;
+      <a href="#M000270">visit_outline_table</a>&nbsp;&nbsp;
+      <a href="#M000275">visit_py_string</a>&nbsp;&nbsp;
+      <a href="#M000271">visit_scenario_name</a>&nbsp;&nbsp;
+      <a href="#M000273">visit_step</a>&nbsp;&nbsp;
+      <a href="#M000274">visit_step_result</a>&nbsp;&nbsp;
+      <a href="#M000272">visit_steps</a>&nbsp;&nbsp;
+      <a href="#M000277">visit_table_cell</a>&nbsp;&nbsp;
+      <a href="#M000278">visit_table_cell_value</a>&nbsp;&nbsp;
+      <a href="#M000276">visit_table_row</a>&nbsp;&nbsp;
+      <a href="#M000262">visit_tag_name</a>&nbsp;&nbsp;
+      <a href="#M000261">visit_tags</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000256" class="method-detail">
+        <a name="M000256"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000256.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000256.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(step_mother)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000279" class="method-detail">
+        <a name="M000279"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000279.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000279.html');return false;">
+          <span class="method-name">announce</span><span class="method-args">(announcement)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Print <tt>announcement</tt>. This method can be called from within
+StepDefinitions.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000265" class="method-detail">
+        <a name="M000265"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000265.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000265.html');return false;">
+          <span class="method-name">visit_background</span><span class="method-args">(background)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000266" class="method-detail">
+        <a name="M000266"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000266.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000266.html');return false;">
+          <span class="method-name">visit_background_name</span><span class="method-args">(keyword, name, file_colon_line, source_indent)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000259" class="method-detail">
+        <a name="M000259"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000259.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000259.html');return false;">
+          <span class="method-name">visit_comment</span><span class="method-args">(comment)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000260" class="method-detail">
+        <a name="M000260"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000260.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000260.html');return false;">
+          <span class="method-name">visit_comment_line</span><span class="method-args">(comment_line)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000268" class="method-detail">
+        <a name="M000268"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000268.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000268.html');return false;">
+          <span class="method-name">visit_examples</span><span class="method-args">(examples)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000267" class="method-detail">
+        <a name="M000267"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000267.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000267.html');return false;">
+          <span class="method-name">visit_examples_array</span><span class="method-args">(examples_array)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000269" class="method-detail">
+        <a name="M000269"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000269.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000269.html');return false;">
+          <span class="method-name">visit_examples_name</span><span class="method-args">(keyword, name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000258" class="method-detail">
+        <a name="M000258"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000258.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000258.html');return false;">
+          <span class="method-name">visit_feature</span><span class="method-args">(feature)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000264" class="method-detail">
+        <a name="M000264"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000264.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000264.html');return false;">
+          <span class="method-name">visit_feature_element</span><span class="method-args">(feature_element)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<tt>feature_element</tt> is either Scenario or ScenarioOutline
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000263" class="method-detail">
+        <a name="M000263"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000263.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000263.html');return false;">
+          <span class="method-name">visit_feature_name</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000257" class="method-detail">
+        <a name="M000257"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000257.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000257.html');return false;">
+          <span class="method-name">visit_features</span><span class="method-args">(features)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000270" class="method-detail">
+        <a name="M000270"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000270.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000270.html');return false;">
+          <span class="method-name">visit_outline_table</span><span class="method-args">(outline_table)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000275" class="method-detail">
+        <a name="M000275"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000275.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000275.html');return false;">
+          <span class="method-name">visit_py_string</span><span class="method-args">(string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000271" class="method-detail">
+        <a name="M000271"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000271.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000271.html');return false;">
+          <span class="method-name">visit_scenario_name</span><span class="method-args">(keyword, name, file_colon_line, source_indent)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000273" class="method-detail">
+        <a name="M000273"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000273.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000273.html');return false;">
+          <span class="method-name">visit_step</span><span class="method-args">(step)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000274" class="method-detail">
+        <a name="M000274"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000274.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000274.html');return false;">
+          <span class="method-name">visit_step_result</span><span class="method-args">(keyword, step_match, multiline_arg, status, exception, source_indent, background)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000272" class="method-detail">
+        <a name="M000272"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000272.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000272.html');return false;">
+          <span class="method-name">visit_steps</span><span class="method-args">(steps)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000277" class="method-detail">
+        <a name="M000277"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000277.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000277.html');return false;">
+          <span class="method-name">visit_table_cell</span><span class="method-args">(table_cell)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000278" class="method-detail">
+        <a name="M000278"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000278.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000278.html');return false;">
+          <span class="method-name">visit_table_cell_value</span><span class="method-args">(value, status)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000276" class="method-detail">
+        <a name="M000276"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000276.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000276.html');return false;">
+          <span class="method-name">visit_table_row</span><span class="method-args">(table_row)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000262" class="method-detail">
+        <a name="M000262"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000262.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000262.html');return false;">
+          <span class="method-name">visit_tag_name</span><span class="method-args">(tag_name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000261" class="method-detail">
+        <a name="M000261"></a>
+
+        <div class="method-heading">
+          <a href="Visitor.src/M000261.html" target="Code" class="method-signature"
+            onclick="popupCode('Visitor.src/M000261.html');return false;">
+          <span class="method-name">visit_tags</span><span class="method-args">(tags)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
